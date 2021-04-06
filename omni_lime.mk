@@ -17,12 +17,12 @@
 # Release name
 DEVICE_PATH := device/xiaomi/lime
 PRODUCT_RELEASE_NAME := Redmi 9T
-PRODUCT_USE_DYNAMIC_PARTITIONS := true
-PRODUCT_PACKAGES += fastbootd
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_minimal.mk)
 
 # Inherit from our custom product configuration
 $(call inherit-product, vendor/omni/config/common.mk)
+# Copy out files
+PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,$(LOCAL_PATH)/recovery/root,recovery/root) \
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := lime
@@ -30,6 +30,15 @@ PRODUCT_NAME := omni_lime
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Redmi 9T
 PRODUCT_MANUFACTURER := Xiaomi
+
+# Dynamic
+PRODUCT_USE_DYNAMIC_PARTITIONS := true
+
+# Fastbootd
+PRODUCT_PACKAGES += \
+    android.hardware.fastboot@1.0-impl-mock \
+    android.hardware.fastboot@1.0-impl-mock.recovery \
+    fastbootd
 
 # HACK: Set vendor patch level
 PRODUCT_PROPERTY_OVERRIDES += \
