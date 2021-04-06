@@ -132,6 +132,6 @@ TARGET_USES_MKE2FS := true
 TW_EXCLUDE_TWRPAPP := true
 TW_NO_SCREEN_BLANK := true
 PLATFORM_VERSION := 21.1.0
-TW_DEVICE_VERSION := $(shell date -u +"%d-%m-%Y") by geoanto555
+TW_DEVICE_VERSION := $(shell date -u +"%d-%m-%Y") by Mnoxx74
 TW_USE_MODEL_HARDWARE_ID_FOR_DEVICE_ID := true
 
