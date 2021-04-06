@@ -37,7 +37,9 @@ Release Date | 2021, January 08
 - build/envsetup.sh
 
 - export ALLOW_MISSING_DEPENDENCIES=true
+- export FOX_USE_TWRP_RECOVERY_IMAGE_BUILDER=1
+- export LC_ALL="C"
 
-- lunch 
+- lunch omni_lime-eng
 
-- make -jX recoveryimage
+- make recoveryimage
